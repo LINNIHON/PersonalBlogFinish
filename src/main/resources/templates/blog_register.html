@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HTML文書の文字エンコーディングを指定 -->
+    <meta charset="UTF-8">
+    <!-- ウェブサイトを異なるデバイスでレスポンシブにするためのビューポートを設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ブラウザタブに表示されるドキュメントのタイトル -->
+    <title>ブログ登録</title>
+    <!-- ページのスタイリングに使用する外部CSSファイルをリンク -->
+    <link rel="stylesheet" th:href="@{/css/blog_register.css}">
+</head>
+<body>
+    <!-- データを送信するPOSTメソッドを持つフォーム要素 -->
+    <form th:action="@{/blog/register/process}" method="post">
+        <!-- フォームのヘッダー -->
+        <h2><span style="color: rgb(241, 70, 241);">秘密</span>のブログ</h2>
+        <!-- タイトル入力フィールド用のdiv -->
+        <div class="input-box small-input">
+            <!-- フォーム送信に必須のブログタイトル入力 -->
+            <input type="text" id="title" name="title" placeholder="タイトル" required>
+        </div>
+        <!-- ブログ内容入力フィールド用のdiv -->
+        <div class="input-box large-input">
+            <!-- ブログ内容入力フィールドのラベル（スクリーンリーダー用） -->
+            <label for="content"></label>
+            <!-- フォーム送信に必須のブログ内容入力 -->
+            <textarea id="content" name="content" placeholder="ブログ内容" required></textarea>
+        </div>
+        <!-- フォーム送信ボタン -->
+        <button type="submit">登録</button>
+    </form>
+</body>
+</html>
+

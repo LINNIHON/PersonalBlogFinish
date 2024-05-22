@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- HTML文書の文字エンコーディングを指定 -->
+    <meta charset="UTF-8">
+    <!-- ウェブサイトを異なるデバイスでレスポンシブにするためのビューポートを設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ブラウザタブに表示されるドキュメントのタイトル -->
+    <title>ログイン画面</title>
+    <!-- ページのスタイリングに使用する外部CSSファイルをリンク -->
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+    <!-- ログインフォームのメインコンテンツ用のコンテナdiv -->
+    <div class="main-box" id="main-box">
+        <!-- データを送信するPOSTメソッドを持つフォーム要素 -->
+        <form th:action="@{/admin/login/process}" id="form" method="post">
+            <!-- フォームのヘッダー -->
+            <h2>Your Secret<span style="color: rgb(241, 70, 241);">s</span></h2>
+            <!-- フォームのサブヘッダー -->
+            <h4>ログイン</h4>
+            <!-- メール入力フィールド用のdiv -->
+            <div class="input-box">
+                <!-- メールを表すアイコン -->
+                <span class="icon">
+                    <ion-icon name="mail"></ion-icon>
+                </span>
+                <!-- フォーム送信に必須のユーザーのメール入力 -->
+                <input type="email" name="email" placeholder=" " required>
+                <!-- メール入力フィールドのラベル -->
+                <label>メール</label>
+            </div>
+            <!-- パスワード入力フィールド用のdiv -->
+            <div class="input-box">
+                <!-- ロックされたパスワードを表すアイコン -->
+                <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon>
+                </span>
+                <!-- フォーム送信に必須のユーザーのパスワード入力 -->
+                <input type="password" name="password" placeholder=" " required>
+                <!-- パスワード入力フィールドのラベル -->
+                <label>パスワード</label>
+            </div>
+            <!-- フォーム送信前にフェードアウト効果をトリガーするonclickイベント付きの送信ボタン -->
+            <button onclick="triggerFadeOut(event)">ログイン</button>
+            <!-- 登録ページへのリンクを含むdiv、ナビゲーション前にもフェードアウト効果をトリガー -->
+            <div class="link-change-page">
+                <p><a th:href="@{/admin/register}">新規登録</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- フォームで使用されるアイコンのIoniconsスクリプト -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- フォーム送信時や登録ページへのナビゲーション時にフェードアウト効果を処理する関数を含むスクリプト -->
+    <script>
+        function triggerFadeOut(event, targetUrl = null) {
+            // デフォルトのフォーム送信やリンクのナビゲーションを防止
+            event.preventDefault();
+            // main-box要素を取得
+            const mainBox = document.getElementById('main-box');
+            // フェードアウトアニメーションをトリガーするfade-outクラスを追加
+            mainBox.classList.add('fade-out');
+            // アクション（ナビゲーションまたはフォーム送信）を2秒遅らせるタイムアウトを設定
+            setTimeout(() => {
+                if (targetUrl) {
+                    // targetUrlが提供されている場合、そのURLにナビゲート
+                    window.location.href = targetUrl;
+                } else {
+                    // それ以外の場合はフォームを送信
+                    document.getElementById('form').submit();
+                }
+            }, 2000); // 2000ミリ秒の遅延
+        }
+    </script>
+</body>
+</html>

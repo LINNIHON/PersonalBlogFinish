@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8"> <!-- 文字エンコーディングをUTF-8に設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ビューポートの設定を指定 -->
+    <title>ブログ</title> <!-- ページのタイトルを指定 -->
+    <link rel="stylesheet" th:href="@{/css/blog_list.css}"> <!-- CSSファイルをリンク -->
+</head>
+
+<body>
+    <div class="main-box">
+        <!-- ログアウトリンク -->
+        <a th:href="@{/admin/logout}" title="クリックしてログアウト">
+            <h1 id="userName" th:text="${adminName} + 'さんのブログ'"></h1> <!-- 管理者名を表示 -->
+        </a>
+
+        <!-- ブログ作成リンク -->
+        <a th:href="@{/blog/register}">
+            <h4><span style="color: rgb(241, 70, 241);">ブログをつくる</span></h4> <!-- ブログ作成のリンクテキスト -->
+        </a>
+        
+        <div id="blogList">
+            <!-- ブログリストのループ -->
+            <div th:each="blog : ${blogList}" class="blogItem" th:data-id="${blog.postId}">
+                <h2 th:text="${blog.title}">ブログタイトル</h2> <!-- ブログのタイトルを表示 -->
+                <p th:text="${#strings.abbreviate(blog.content, 100)}">ブログ内容のスニペット</p> <!-- ブログの内容の一部を表示 -->
+                <p>
+                    <!-- 編集リンク -->
+                    <a th:href="@{/blog/editing/{id}(id=${blog.postId})}">閲覧編集</a> |
+                    <!-- 削除リンク -->
+                    <a href="#" th:onclick="'deleteBlogItem(' + ${blog.postId} + '); return true;'">削除</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ブログアイテムを削除する関数
+        function deleteBlogItem(id) {
+            const confirmation = confirm('本当にこのブログを削除しますか？'); // 削除確認のダイアログを表示
+            if (confirmation) {
+                fetch(`/blog/delete/${id}`, {
+                    method: 'DELETE', // DELETEメソッドを使用してリクエストを送信
+                }).then(response => {
+                    if (response.status === 204) {
+                        location.reload();  // 削除成功時にページを再読み込み
+                    }
+                }).catch(error => {
+                    console.error('エラー:', error);  // エラーが発生した場合にコンソールにエラーメッセージを表示
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

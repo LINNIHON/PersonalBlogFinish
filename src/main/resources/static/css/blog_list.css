@@ -1,0 +1,130 @@
+/* body要素のスタイリング */
+body {
+    font-family: Arial, sans-serif; /* フォントファミリーをArialに設定、フォールバックとしてsans-serif */
+    background-image: url(../images/background.png); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像を全面に表示 */
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+}
+
+/* メインコンテナボックスのスタイリング */
+.main-box {
+    background: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
+    backdrop-filter: blur(10px); /* ぼかし効果を適用 */
+    padding: 20px; /* ボックス内のパディング */
+    border-radius: 12px; /* 角を丸くする */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ボックスシャドウを追加 */
+    max-width: 800px; /* 最大幅 */
+    margin: 50px auto; /* 水平中央揃えと上部のマージンを追加 */
+    text-align: center; /* テキストを中央揃え */
+}
+
+/* 見出し要素のスタイリング */
+h1, h2, h3 {
+    color: #333; /* テキストの色 */
+    margin-bottom: 20px; /* 見出しの下にマージンを追加 */
+}
+
+/* フォーム要素のスタイリング */
+form {
+    margin-bottom: 20px; /* フォームの下にマージンを追加 */
+}
+
+/* 入力ボックスコンテナのスタイリング */
+.input-box {
+    position: relative; /* 相対位置を設定 */
+    margin-bottom: 20px; /* 入力ボックスの下にマージンを追加 */
+}
+
+/* 入力ボックス内のラベルのスタイリング */
+.input-box label {
+    display: block; /* ブロック要素として表示 */
+    margin-bottom: 8px; /* ラベルの下にマージンを追加 */
+    font-weight: bold; /* 太字にする */
+}
+
+/* テキスト入力とテキストエリア要素のスタイリング */
+.input-box input[type="text"],
+.input-box textarea {
+    width: 100%; /* 幅を100%に設定 */
+    padding: 10px; /* 入力内のパディング */
+    border: 1px solid #ccc; /* ボーダーの色 */
+    border-radius: 8px; /* 角を丸くする */
+    background: rgba(255, 255, 255, 0.6); /* 半透明の白背景 */
+    backdrop-filter: blur(5px); /* ぼかし効果を適用 */
+}
+
+/* テキストエリア要素の追加スタイリング */
+textarea {
+    height: 150px; /* 固定の高さ */
+}
+
+/* ボタン要素のスタイリング */
+button {
+    background-color: purple; /* 背景色 */
+    color: white; /* テキストの色 */
+    border: none; /* ボーダーなし */
+    padding: 10px 20px; /* ボタン内のパディング */
+    border-radius: 8px; /* 角を丸くする */
+    cursor: pointer; /* ホバー時のカーソルを指に変更 */
+    font-size: 16px; /* フォントサイズ */
+}
+
+/* ボタン要素のホバー時の追加スタイリング */
+button:hover {
+    background-color: purple; /* ホバー時の背景色 */
+}
+
+/* ブログアイテムコンテナのスタイリング */
+.blogItem {
+    background: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
+    border: 1px solid #ddd; /* ボーダーの色 */
+    padding: 20px; /* ボックス内のパディング */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウを追加 */
+    margin-bottom: 20px; /* ブログアイテムの下にマージンを追加 */
+}
+
+/* ブログアイテム内のh3要素のスタイリング */
+.blogItem h3 {
+    font-size: 20px; /* フォントサイズ */
+    color: #333; /* テキストの色 */
+}
+
+/* ブログアイテム内のフォーム要素のスタイリング */
+.blogItem form {
+    display: flex; /* Flexboxレイアウトを使用 */
+    flex-direction: column; /* アイテムを縦に配置 */
+}
+
+/* ブログアイテム内のボタン要素の追加スタイリング */
+.blogItem button {
+    align-self: flex-start; /* ボタンをコンテナの先頭に揃える */
+    margin-top: 10px; /* ボタンの上にマージンを追加 */
+}
+
+/* ユーザー名のホバーツールチップのスタイリング */
+#userName {
+    cursor: pointer; /* ホバー時のカーソルを指に変更 */
+    position: relative; /* 相対位置を設定 */
+}
+
+#userName::after {
+    content: attr(title); /* title属性の内容を使用 */
+    position: absolute; /* 絶対位置を設定 */
+    bottom: -1.5em; /* 下にオフセット */
+    left: 50%; /* 水平中央揃え */
+    transform: translateX(-50%); /* 水平中央揃え */
+    background-color: rgba(0, 0, 0, 0.75); /* 半透明の背景 */
+    color: #fff; /* 白色の文字 */
+    padding: 5px 10px; /* 内部余白 */
+    border-radius: 5px; /* 角を丸くする */
+    white-space: nowrap; /* 折り返し禁止 */
+    opacity: 0; /* 初期透明 */
+    pointer-events: none; /* マウスイベントを禁止 */
+    transition: opacity 0.3s; /* フェード効果 */
+}
+
+#userName:hover::after {
+    opacity: 1; /* ホバー時に表示 */
+}

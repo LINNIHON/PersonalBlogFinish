@@ -1,0 +1,161 @@
+/* Google Fontsから 'Poppins' フォントをインポート */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* すべての要素にグローバルスタイルを適用 */
+* {
+    margin: 0; /* デフォルトのマージンを削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    box-sizing: border-box; /* パディングとボーダーを要素の全体の幅と高さに含める */
+    font-family: 'Poppins', sans-serif; /* フォントファミリーを 'Poppins' に設定 */
+}
+
+/* body 要素のスタイリング */
+body {
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    min-height: 100vh; /* 最小の高さをビューポートの高さの100%に設定 */
+    background-image: url(../images/background.png); /* 背景画像を設定 */
+    background-size: cover; /* 背景画像を全体に表示 */
+    background-position: center; /* 背景画像を中央に配置 */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+}
+
+/* メインボックスコンテナのスタイリング */
+.main-box {
+    position: relative; /* 相対位置に設定 */
+    width: 400px; /* 幅を固定 */
+    height: 500px; /* 高さを固定 */
+    background: rgba(25, 25, 25, 0.5); /* 半透明の背景色 */
+    border-radius: 20px; /* 角を丸くする */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    flex-direction: column; /* アイテムを縦方向に並べる */
+    backdrop-filter: blur(10px); /* ぼかし効果を適用 */
+    -webkit-backdrop-filter: blur(10px); /* Safari 用のぼかし効果を適用 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ボックスの影を追加 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明のボーダー */
+}
+
+/* h2 要素のスタイリング */
+h2 {
+    font-size: 2em; /* フォントサイズ */
+    color: #fff; /* 文字色 */
+    text-align: center; /* テキストを中央揃え */
+    transition: .5s ease; /* スムーズな変化 */
+}
+
+/* 'purple' クラスを持つ要素のスタイリング */
+.purple {
+    color: purple; /* 文字色 */
+}
+
+/* h4 要素のスタイリング */
+h4 {
+    font-size: 1em; /* フォントサイズ */
+    color: #fff; /* 文字色 */
+    text-align: center; /* テキストを中央揃え */
+    transition: .5s ease; /* スムーズな変化 */
+}
+
+/* 入力ボックスコンテナのスタイリング */
+.input-box {
+    position: relative; /* 相対位置に設定 */
+    width: 310px; /* 幅を固定 */
+    margin: 20px 0; /* 上下のマージン */
+    border-bottom: 2px solid #fff; /* 下部のボーダー */
+}
+
+/* 入力ボックス内のラベルのスタイリング */
+.input-box label {
+    position: absolute; /* 絶対位置に設定 */
+    top: 50%; /* 垂直方向に中央揃え */
+    left: 5px; /* 左から少し離す */
+    transform: translateY(-50%); /* 垂直方向の位置を調整 */
+    font-size: 1em; /* フォントサイズ */
+    color: #fff; /* 文字色 */
+    pointer-events: none; /* ポインターイベントを無効にする */
+    transition: .5s; /* スムーズな変化 */
+}
+
+/* 入力がフォーカスされているか値があるときのラベルのスタイリング */
+.input-box input:focus~label,
+.input-box input:not(:placeholder-shown)~label {
+    top: -5px; /* ラベルを入力の上に移動 */
+    opacity: 0; /* ラベルを非表示にする */
+    visibility: hidden; /* ラベルが見えないことを確実にする */
+}
+
+/* 入力ボックス内の入力要素のスタイリング */
+.input-box input {
+    width: 100%; /* 幅を全体に設定 */
+    height: 50px; /* 高さを固定 */
+    background: transparent; /* 背景を透明に設定 */
+    border: none; /* ボーダーをなしに設定 */
+    outline: none; /* アウトラインをなしに設定 */
+    font-size: 1em; /* フォントサイズ */
+    color: #fff; /* 文字色 */
+}
+
+/* 入力ボックス内のアイコンのスタイリング */
+.input-box .icon {
+    position: absolute; /* 絶対位置に設定 */
+    right: 8px; /* 右から少し離す */
+    color: #fff; /* アイコンの色 */
+    font-size: 1.2em; /* フォントサイズ */
+    line-height: 57px; /* 垂直方向の揃えを調整 */
+    transition: .5s ease; /* スムーズな変化 */
+}
+
+/* ボタン要素のスタイリング */
+button {
+    width: 100%; /* 幅を全体に設定 */
+    height: 40px; /* 高さを固定 */
+    background: #fff; /* 背景色 */
+    border: none; /* ボーダーなし */
+    outline: none; /* アウトラインなし */
+    border-radius: 40px; /* 角を丸くする */
+    cursor: pointer; /* ホバー時にポインターカーソルを表示 */
+    font-size: 1em; /* フォントサイズ */
+    color: #191919; /* 文字色 */
+    font-weight: 500; /* フォントの太さ */
+    transition: .5s ease; /* スムーズな変化 */
+}
+
+/* ページ変更リンクセクションのスタイリング */
+.link-change-page {
+    color: #fff; /* 文字色 */
+    font-size: .9em; /* フォントサイズ */
+    text-align: center; /* テキストを中央揃え */
+    margin: 25px 0 10px; /* 上下のマージン */
+    transition: .5s ease; /* スムーズな変化 */
+}
+
+/* ページ変更リンクセクション内のリンクのスタイリング */
+.link-change-page p a {
+    color: purple; /* リンクの色 */
+    text-decoration: none; /* 下線を削除 */
+    font-weight: 600; /* フォントの太さ */
+    transition: color .5s ease; /* 色のスムーズな変化 */
+}
+
+/* リンクのホバー時のスタイリング */
+.link-change-page p a:hover {
+    text-decoration: underline; /* ホバー時に下線を追加 */
+}
+
+/* フェードアウトアニメーションのキーフレーム */
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* 開始時の不透明度 */
+    }
+    100% {
+        opacity: 0; /* 終了時の不透明度 */
+    }
+}
+
+/* フェードアウトクラスのスタイリング */
+.fade-out {
+    animation: fadeOut 2s forwards; /* 2秒間のフェードアウトアニメーションを適用 */
+}
