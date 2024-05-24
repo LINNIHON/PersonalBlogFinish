@@ -33,6 +33,7 @@
 					<!-- "#" はページ内のトップにリンクする特殊な値 -->
 					<!-- onclick は、HTML 要素に対してユーザーがクリックしたときに実行される JavaScript コードを指定するための属性 -->
 					<!-- 通常は、onclick="関数名() -->
+					<!--return true JavaScriptコードの実行後もブラウザはリンクを通常通り処理しようとします -->
                     <a href="#" th:onclick="'deleteBlogItem(' + ${blog.postId} + '); return true;'">削除</a>
                 </p>
             </div>

@@ -32,6 +32,11 @@ public class BlogDeleteController {
         //セッションから loginAdminInfo という属性を取得し、それを Admin 型の admin 変数に格納します。
         //取得した管理者情報を使って、ブログ削除処理を実行。
         
+        //ResponseEntity.status を使った delete メソッドは、
+        //エラーメッセージやステータスコードを使うことで、
+        //新しい機能を追加するときにどんなエラーが起こるか簡単にわかるので、後から機能を追加しやすいです。
+        //今回は、 location.reload();
+        
         
         //これは、「ログインしていない人には、この操作はできませんよ」というメッセージをサーバーから送り返すためのコードです。
         if (admin == null) {
