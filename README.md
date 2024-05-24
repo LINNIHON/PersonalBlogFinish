@@ -53,6 +53,7 @@
 
 ## 参考文献
 - [参考動画](https://www.youtube.com/watch?v=uTCmNDnP2VY&t=26s)
+- https://spring.pleiades.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpStatus.html
 
 ### 困っていること
 - 不要なテーブルを想定した
