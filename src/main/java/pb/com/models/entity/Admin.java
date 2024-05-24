@@ -5,11 +5,13 @@ import jakarta.persistence.GeneratedValue; // 主キーの自動生成のため�
 import jakarta.persistence.GenerationType; // 主キー生成戦略を定義するための GenerationType 列挙型をインポートします。
 import jakarta.persistence.Id; // JPA の @Id アノテーションをインポートします。
 
-@Entity // このクラスが JPA エンティティであることを示します。
+@Entity //このクラスがデータベースのテーブルに対応するよ
 public class Admin {
 
-    @Id // このフィールドがエンティティの主キーであることを示します。
-    @GeneratedValue(strategy = GenerationType.AUTO) // 主キーの値を自動生成する戦略を指定します。
+    @Id //これはデータベースの中で主キーだよ
+    @GeneratedValue(strategy = GenerationType.AUTO) 
+//    「新しいデータができたとき、この番号を自動で作ってね」という意味です。
+//    　新しいデータを追加するとき、IDが1、2、3と順番に増えていくようにします。
     private Integer adminId; // 管理者ID（主キー）
 
     private String name; // 管理者の名前

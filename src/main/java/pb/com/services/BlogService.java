@@ -11,39 +11,51 @@ import pb.com.models.dao.BlogDao; // models.dao パッケージから BlogDao �
 import pb.com.models.entity.Admin; // models.entity パッケージから Admin エンティティをインポートします。
 import pb.com.models.entity.Blog; // models.entity パッケージから Blog エンティティをインポートします。
 
-@Service // このクラスを Spring サービスコンポーネントとしてマークし、Spring のコンポーネントスキャンで検出され、Spring Bean として登録されるようにします。
+@Service  // このクラスがサービスとして働く
 public class BlogService {
 
-    @Autowired // Spring に BlogDao 依存性を自動的に注入するよう指示します。
-    private BlogDao blogDao; // BlogDao 型のプライベートフィールドを宣言します。
+    @Autowired // blogDaoの必要なものを自動で入れてもらう
+    private BlogDao blogDao; // BlogDaoのデータを使うための変数を作る 
 
-    @Autowired // Spring に AdminDao 依存性を自動的に注入するよう指示します。
-    private AdminDao adminDao; // AdminDao 型のプライベートフィールドを宣言します。
+    @Autowired // AdminDaoの必要なものを自動で入れてもらう
+    private AdminDao adminDao;  // AdminDaoのデータを使うための変数を作る
 
-    @Autowired // Spring に AdminService 依存性を自動的に注入するよう指示します。
-    private AdminService adminService; // AdminService 型のプライベートフィールドを宣言します。
+    @Autowired // AdminServiceの必要なものを自動で入れてもらう
+    private AdminService adminService; // AdminServiceのデータを使うための変数を作る
 
     // 指定された管理者IDに関連するすべてのブログを取得します
     public List<Blog> selectAllBlog(Integer adminId) {
         return blogDao.findAllByAdmin_AdminId(adminId); // 管理者IDに基づいてすべてのブログを検索し、返します
     }
-
+//    管理者IDを使ってブログを探します。
+//    見つけたブログをリスト（一覧）で返します。
+    
+    //いらないかも
     // すべてのブログを取得します
     public List<Blog> getAllBlogs() {
         return blogDao.findAll(); // すべてのブログを検索し、返します
     }
+//    すべてのブログを探します。
+//    見つけたブログをリスト（一覧）で返します。
 
     // ブログを保存または更新します
     public Blog saveOrUpdateBlog(Blog blog) {
         return blogDao.save(blog); // ブログを保存または更新し、その結果を返します
     }
+//    ブログをデータベースに保存または更新します。
+//    保存または更新されたブログを返します。
 
     // 指定されたIDのブログを取得します
     public Blog getBlogById(Integer id) {
         return blogDao.findByPostId(id); // ポストIDに基づいてブログを検索し、返します
     }
+//    ブログのIDを使ってブログを探します。
+//    見つけたブログを返します。
 
-    @Transactional // このメソッドがトランザクション内で実行されることを示します
+    @Transactional //途中で問題が起きたら、全部やめて最初の状態に戻します。
+//    @Transactional は、「この部分の仕事を一つのまとまりとして扱います」というアノテーションです。
+//    もし途中で問題が起きたら、全部元に戻します。
+//    これで、データベースの操作が安全に行えるようになります。
     public Blog createBlogPost(String adminEmail, String title, String content) {
         Admin admin = adminService.findAdminByEmail(adminEmail); // 管理者のメールアドレスで管理者を検索します
         if (admin == null) {
@@ -52,8 +64,16 @@ public class BlogService {
         Blog blog = new Blog(admin, title, content); // 新しいブログエンティティを作成します
         return blogDao.save(blog); // ブログを保存し、その結果を返します
     }
+//    管理者のメールアドレスを使って管理者を探します。
+//    管理者が見つからない場合は、エラーを出します。
+//    新しいブログを作ります。
+//    ブログをデータベースに保存します。
+//    保存されたブログを返します。
 
-    @Transactional // このメソッドがトランザクション内で実行されることを示します
+    @Transactional //途中で問題が起きたら、全部やめて最初の状態に戻します。
+//  @Transactional は、「この部分の仕事を一つのまとまりとして扱います」というアノテーションです。
+//  もし途中で問題が起きたら、全部元に戻します。
+//  これで、データベースの操作が安全に行えるようになります。
     public boolean deleteBlog(Integer postId) {
         try {
             blogDao.deleteByPostId(postId); // ポストIDに基づいてブログを削除します
@@ -63,9 +83,13 @@ public class BlogService {
             return false; // 削除が失敗した場合は false を返します
         }
     }
+//    ブログのIDを使ってブログを削除します。
+//    削除が成功したかどうかを返します。
 
     // 指定された管理者IDに関連するすべてのブログを取得します
     public List<Blog> getAllBlogsByAdminId(Integer adminId) {
         return blogDao.findAllByAdmin_AdminId(adminId); // 管理者IDに基づいてすべてのブログを検索し、返します
     }
+//    管理者IDを使ってブログを探します。
+//    見つけたブログをリスト（一覧）で返します。
 }

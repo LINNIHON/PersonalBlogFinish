@@ -1,130 +1,130 @@
-/* body要素のスタイリング */
+/* body（からだ）要素のデザイン */
 body {
-    font-family: Arial, sans-serif; /* フォントファミリーをArialに設定、フォールバックとしてsans-serif */
-    background-image: url(../images/background.png); /* 背景画像を設定 */
-    background-size: cover; /* 背景画像を全面に表示 */
-    margin: 0; /* デフォルトのマージンを削除 */
-    padding: 0; /* デフォルトのパディングを削除 */
+    font-family: Arial, sans-serif; /* 文字のスタイルをArialにする */
+    background-image: url(../images/background.png); /* 背景に画像を使う */
+    background-size: cover; /* 画像を画面全体に広げる */
+    margin: 0; /* 余白をなくす */
+    padding: 0; /* 中の空間もなくす */
 }
 
-/* メインコンテナボックスのスタイリング */
+/* main-box（メインのはこ）のデザイン */
 .main-box {
-    background: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
-    backdrop-filter: blur(10px); /* ぼかし効果を適用 */
-    padding: 20px; /* ボックス内のパディング */
+    background: rgba(255, 255, 255, 0.7); /* うっすら白い背景 */
+    backdrop-filter: blur(10px); /* ぼかしをつける */
+    padding: 20px; /* 内側に20pxの空間 */
     border-radius: 12px; /* 角を丸くする */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ボックスシャドウを追加 */
-    max-width: 800px; /* 最大幅 */
-    margin: 50px auto; /* 水平中央揃えと上部のマージンを追加 */
-    text-align: center; /* テキストを中央揃え */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 影をつける */
+    max-width: 800px; /* 幅を最大800pxにする */
+    margin: 50px auto; /* 上に50px、左右は真ん中にする */
+    text-align: center; /* 文字を真ん中にする */
 }
 
-/* 見出し要素のスタイリング */
+/* 見出し（h1, h2, h3）のデザイン */
 h1, h2, h3 {
-    color: #333; /* テキストの色 */
-    margin-bottom: 20px; /* 見出しの下にマージンを追加 */
+    color: #333; /* 文字の色をグレーにする */
+    margin-bottom: 20px; /* 下に20pxの空間 */
 }
 
-/* フォーム要素のスタイリング */
+/* フォーム（入力欄）のデザイン */
 form {
-    margin-bottom: 20px; /* フォームの下にマージンを追加 */
+    margin-bottom: 20px; /* 下に20pxの空間 */
 }
 
-/* 入力ボックスコンテナのスタイリング */
+/* 入力ボックスのデザイン */
 .input-box {
-    position: relative; /* 相対位置を設定 */
-    margin-bottom: 20px; /* 入力ボックスの下にマージンを追加 */
+    position: relative; /* 相対的な位置 */
+    margin-bottom: 20px; /* 下に20pxの空間 */
 }
 
-/* 入力ボックス内のラベルのスタイリング */
+/* 入力ボックスのラベル（説明）のデザイン */
 .input-box label {
-    display: block; /* ブロック要素として表示 */
-    margin-bottom: 8px; /* ラベルの下にマージンを追加 */
-    font-weight: bold; /* 太字にする */
+    display: block; /* ブロックの形にする */
+    margin-bottom: 8px; /* 下に8pxの空間 */
+    font-weight: bold; /* 文字を太くする */
 }
 
-/* テキスト入力とテキストエリア要素のスタイリング */
+/* テキスト入力とテキストエリアのデザイン */
 .input-box input[type="text"],
 .input-box textarea {
-    width: 100%; /* 幅を100%に設定 */
-    padding: 10px; /* 入力内のパディング */
-    border: 1px solid #ccc; /* ボーダーの色 */
+    width: 100%; /* 幅を100%にする */
+    padding: 10px; /* 内側に10pxの空間 */
+    border: 1px solid #ccc; /* 灰色の線を引く */
     border-radius: 8px; /* 角を丸くする */
-    background: rgba(255, 255, 255, 0.6); /* 半透明の白背景 */
-    backdrop-filter: blur(5px); /* ぼかし効果を適用 */
+    background: rgba(255, 255, 255, 0.6); /* うっすら白い背景 */
+    backdrop-filter: blur(5px); /* ぼかしをつける */
 }
 
-/* テキストエリア要素の追加スタイリング */
+/* テキストエリアの追加デザイン */
 textarea {
-    height: 150px; /* 固定の高さ */
+    height: 150px; /* 高さを150pxにする */
 }
 
-/* ボタン要素のスタイリング */
+/* ボタンのデザイン */
 button {
-    background-color: purple; /* 背景色 */
-    color: white; /* テキストの色 */
-    border: none; /* ボーダーなし */
-    padding: 10px 20px; /* ボタン内のパディング */
+    background-color: purple; /* 背景を紫にする */
+    color: white; /* 文字の色を白にする */
+    border: none; /* 線をなくす */
+    padding: 10px 20px; /* 内側に10px、左右に20pxの空間 */
     border-radius: 8px; /* 角を丸くする */
-    cursor: pointer; /* ホバー時のカーソルを指に変更 */
-    font-size: 16px; /* フォントサイズ */
+    cursor: pointer; /* マウスを指の形にする */
+    font-size: 16px; /* 文字の大きさを16pxにする */
 }
 
-/* ボタン要素のホバー時の追加スタイリング */
+/* ボタンをクリックするときの追加デザイン */
 button:hover {
-    background-color: purple; /* ホバー時の背景色 */
+    background-color: darkpurple; /* 背景を濃い紫にする */
 }
 
-/* ブログアイテムコンテナのスタイリング */
+/* ブログアイテム（記事）のデザイン */
 .blogItem {
-    background: rgba(255, 255, 255, 0.7); /* 半透明の白背景 */
-    border: 1px solid #ddd; /* ボーダーの色 */
-    padding: 20px; /* ボックス内のパディング */
+    background: rgba(255, 255, 255, 0.7); /* うっすら白い背景 */
+    border: 1px solid #ddd; /* 灰色の線を引く */
+    padding: 20px; /* 内側に20pxの空間 */
     border-radius: 8px; /* 角を丸くする */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウを追加 */
-    margin-bottom: 20px; /* ブログアイテムの下にマージンを追加 */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 影をつける */
+    margin-bottom: 20px; /* 下に20pxの空間 */
 }
 
-/* ブログアイテム内のh3要素のスタイリング */
+/* ブログアイテムの見出し（h3）のデザイン */
 .blogItem h3 {
-    font-size: 20px; /* フォントサイズ */
-    color: #333; /* テキストの色 */
+    font-size: 20px; /* 文字の大きさを20pxにする */
+    color: #333; /* 文字の色をグレーにする */
 }
 
-/* ブログアイテム内のフォーム要素のスタイリング */
+/* ブログアイテムのフォーム（入力欄）のデザイン */
 .blogItem form {
-    display: flex; /* Flexboxレイアウトを使用 */
-    flex-direction: column; /* アイテムを縦に配置 */
+    display: flex; /* フレックスボックスの形にする */
+    flex-direction: column; /* 縦に並べる */
 }
 
-/* ブログアイテム内のボタン要素の追加スタイリング */
+/* ブログアイテムのボタンの追加デザイン */
 .blogItem button {
-    align-self: flex-start; /* ボタンをコンテナの先頭に揃える */
-    margin-top: 10px; /* ボタンの上にマージンを追加 */
+    align-self: flex-start; /* 左端に寄せる */
+    margin-top: 10px; /* 上に10pxの空間 */
 }
 
-/* ユーザー名のホバーツールチップのスタイリング */
+/* ユーザー名のホバーツールチップのデザイン */
 #userName {
-    cursor: pointer; /* ホバー時のカーソルを指に変更 */
-    position: relative; /* 相対位置を設定 */
+    cursor: pointer; /* マウスを指の形にする */
+    position: relative; /* 相対的な位置 */
 }
 
 #userName::after {
-    content: attr(title); /* title属性の内容を使用 */
-    position: absolute; /* 絶対位置を設定 */
-    bottom: -1.5em; /* 下にオフセット */
-    left: 50%; /* 水平中央揃え */
-    transform: translateX(-50%); /* 水平中央揃え */
-    background-color: rgba(0, 0, 0, 0.75); /* 半透明の背景 */
-    color: #fff; /* 白色の文字 */
-    padding: 5px 10px; /* 内部余白 */
+    content: attr(title); /* タイトルの内容を表示 */
+    position: absolute; /* 絶対的な位置 */
+    bottom: -1.5em; /* 下に配置 */
+    left: 50%; /* 左に50%寄せる */
+    transform: translateX(-50%); /* 中心に揃える */
+    background-color: rgba(0, 0, 0, 0.75); /* うっすら黒い背景 */
+    color: #fff; /* 文字の色を白にする */
+    padding: 5px 10px; /* 内側に5px、左右に10pxの空間 */
     border-radius: 5px; /* 角を丸くする */
-    white-space: nowrap; /* 折り返し禁止 */
-    opacity: 0; /* 初期透明 */
-    pointer-events: none; /* マウスイベントを禁止 */
-    transition: opacity 0.3s; /* フェード効果 */
+    white-space: nowrap; /* 折り返さない */
+    opacity: 0; /* 最初は透明 */
+    pointer-events: none; /* マウス操作を無効にする */
+    transition: opacity 0.3s; /* なめらかに透明にする */
 }
 
 #userName:hover::after {
-    opacity: 1; /* ホバー時に表示 */
+    opacity: 1; /* マウスをのせると表示する */
 }

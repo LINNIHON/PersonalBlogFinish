@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository; // JpaRepository �
 import org.springframework.stereotype.Repository; // @Repository アノテーションをインポートします。
 import pb.com.models.entity.Blog; // Blog エンティティをインポートします。
 
-@Repository // このインターフェースが Spring Data JPA リポジトリであることを示します。
+@Repository //これは「データベースから情報を取り出すクラスですよ」と教えるためのアノテーションです。
 public interface BlogDao extends JpaRepository<Blog, Integer> {
     
     // 保存処理と更新処理（インサートとアップデート）

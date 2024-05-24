@@ -1,161 +1,161 @@
 /* Google Fontsから 'Poppins' フォントをインポート */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* すべての要素にグローバルスタイルを適用 */
+/* すべての要素にスタイルを適用 */
 * {
-    margin: 0; /* デフォルトのマージンを削除 */
-    padding: 0; /* デフォルトのパディングを削除 */
-    box-sizing: border-box; /* パディングとボーダーを要素の全体の幅と高さに含める */
-    font-family: 'Poppins', sans-serif; /* フォントファミリーを 'Poppins' に設定 */
+    margin: 0; /* 余白をなくす */
+    padding: 0; /* 内側の余白をなくす */
+    box-sizing: border-box; /* 内側の余白と枠線を幅に含める */
+    font-family: 'Poppins', sans-serif; /* フォントを 'Poppins' にする */
 }
 
-/* body 要素のスタイリング */
+/* body要素のスタイル */
 body {
-    display: flex; /* フレックスボックスレイアウトを使用 */
-    justify-content: center; /* 水平方向に中央揃え */
-    align-items: center; /* 垂直方向に中央揃え */
-    min-height: 100vh; /* 最小の高さをビューポートの高さの100%に設定 */
-    background-image: url(../images/background.png); /* 背景画像を設定 */
-    background-size: cover; /* 背景画像を全体に表示 */
-    background-position: center; /* 背景画像を中央に配置 */
-    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    display: flex; /* 要素を並べる */
+    justify-content: center; /* 横方向に真ん中にする */
+    align-items: center; /* 縦方向に真ん中にする */
+    min-height: 100vh; /* 画面の高さを100%にする */
+    background-image: url(../images/background.png); /* 背景画像を設定する */
+    background-size: cover; /* 画像を全体に広げる */
+    background-position: center; /* 画像を真ん中に配置する */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
 }
 
-/* メインボックスコンテナのスタイリング */
+/* main-box（メインのボックス）のスタイル */
 .main-box {
-    position: relative; /* 相対位置に設定 */
-    width: 400px; /* 幅を固定 */
-    height: 500px; /* 高さを固定 */
-    background: rgba(25, 25, 25, 0.5); /* 半透明の背景色 */
+    position: relative; /* 位置を相対的にする */
+    width: 400px; /* 幅を400pxにする */
+    height: 500px; /* 高さを500pxにする */
+    background: rgba(25, 25, 25, 0.5); /* 半透明の黒い背景 */
     border-radius: 20px; /* 角を丸くする */
-    display: flex; /* フレックスボックスレイアウトを使用 */
-    justify-content: center; /* 水平方向に中央揃え */
-    align-items: center; /* 垂直方向に中央揃え */
-    flex-direction: column; /* アイテムを縦方向に並べる */
-    backdrop-filter: blur(10px); /* ぼかし効果を適用 */
-    -webkit-backdrop-filter: blur(10px); /* Safari 用のぼかし効果を適用 */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ボックスの影を追加 */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明のボーダー */
+    display: flex; /* 要素を並べる */
+    justify-content: center; /* 横方向に真ん中にする */
+    align-items: center; /* 縦方向に真ん中にする */
+    flex-direction: column; /* 要素を縦に並べる */
+    backdrop-filter: blur(10px); /* 背景をぼかす */
+    -webkit-backdrop-filter: blur(10px); /* Safari用に背景をぼかす */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ボックスに影をつける */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 透明な白い枠線をつける */
 }
 
-/* h2 要素のスタイリング */
+/* h2（見出し）のスタイル */
 h2 {
-    font-size: 2em; /* フォントサイズ */
-    color: #fff; /* 文字色 */
-    text-align: center; /* テキストを中央揃え */
-    transition: .5s ease; /* スムーズな変化 */
+    font-size: 2em; /* 文字の大きさを2emにする */
+    color: #fff; /* 文字の色を白にする */
+    text-align: center; /* 文字を真ん中にそろえる */
+    transition: .5s ease; /* スムーズに変わるようにする */
 }
 
-/* 'purple' クラスを持つ要素のスタイリング */
+/* 'purple' クラスのスタイル */
 .purple {
-    color: purple; /* 文字色 */
+    color: purple; /* 文字の色を紫にする */
 }
 
-/* h4 要素のスタイリング */
+/* h4（小さい見出し）のスタイル */
 h4 {
-    font-size: 1em; /* フォントサイズ */
-    color: #fff; /* 文字色 */
-    text-align: center; /* テキストを中央揃え */
-    transition: .5s ease; /* スムーズな変化 */
+    font-size: 1em; /* 文字の大きさを1emにする */
+    color: #fff; /* 文字の色を白にする */
+    text-align: center; /* 文字を真ん中にそろえる */
+    transition: .5s ease; /* スムーズに変わるようにする */
 }
 
-/* 入力ボックスコンテナのスタイリング */
+/* 入力ボックスのスタイル */
 .input-box {
-    position: relative; /* 相対位置に設定 */
-    width: 310px; /* 幅を固定 */
-    margin: 20px 0; /* 上下のマージン */
-    border-bottom: 2px solid #fff; /* 下部のボーダー */
+    position: relative; /* 位置を相対的にする */
+    width: 310px; /* 幅を310pxにする */
+    margin: 20px 0; /* 上下の余白を20pxにする */
+    border-bottom: 2px solid #fff; /* 下に白い線をつける */
 }
 
-/* 入力ボックス内のラベルのスタイリング */
+/* 入力ボックスのラベル（説明）のスタイル */
 .input-box label {
-    position: absolute; /* 絶対位置に設定 */
-    top: 50%; /* 垂直方向に中央揃え */
+    position: absolute; /* 位置を固定する */
+    top: 50%; /* 縦の真ん中にする */
     left: 5px; /* 左から少し離す */
-    transform: translateY(-50%); /* 垂直方向の位置を調整 */
-    font-size: 1em; /* フォントサイズ */
-    color: #fff; /* 文字色 */
-    pointer-events: none; /* ポインターイベントを無効にする */
-    transition: .5s; /* スムーズな変化 */
+    transform: translateY(-50%); /* 縦の位置を調整する */
+    font-size: 1em; /* 文字の大きさを1emにする */
+    color: #fff; /* 文字の色を白にする */
+    pointer-events: none; /* マウスの操作を無効にする */
+    transition: .5s; /* スムーズに変わるようにする */
 }
 
-/* 入力がフォーカスされているか値があるときのラベルのスタイリング */
+/* 入力にフォーカスしたり、値があるときのラベルのスタイル */
 .input-box input:focus~label,
 .input-box input:not(:placeholder-shown)~label {
-    top: -5px; /* ラベルを入力の上に移動 */
-    opacity: 0; /* ラベルを非表示にする */
-    visibility: hidden; /* ラベルが見えないことを確実にする */
+    top: -5px; /* ラベルを上に移動する */
+    opacity: 0; /* ラベルを見えなくする */
+    visibility: hidden; /* ラベルを完全に見えなくする */
 }
 
-/* 入力ボックス内の入力要素のスタイリング */
+/* 入力ボックスの入力欄のスタイル */
 .input-box input {
-    width: 100%; /* 幅を全体に設定 */
-    height: 50px; /* 高さを固定 */
-    background: transparent; /* 背景を透明に設定 */
-    border: none; /* ボーダーをなしに設定 */
-    outline: none; /* アウトラインをなしに設定 */
-    font-size: 1em; /* フォントサイズ */
-    color: #fff; /* 文字色 */
+    width: 100%; /* 幅を全体にする */
+    height: 50px; /* 高さを50pxにする */
+    background: transparent; /* 背景を透明にする */
+    border: none; /* 枠線をなくす */
+    outline: none; /* 枠線をなくす */
+    font-size: 1em; /* 文字の大きさを1emにする */
+    color: #fff; /* 文字の色を白にする */
 }
 
-/* 入力ボックス内のアイコンのスタイリング */
+/* 入力ボックスのアイコンのスタイル */
 .input-box .icon {
-    position: absolute; /* 絶対位置に設定 */
+    position: absolute; /* 位置を固定する */
     right: 8px; /* 右から少し離す */
-    color: #fff; /* アイコンの色 */
-    font-size: 1.2em; /* フォントサイズ */
-    line-height: 57px; /* 垂直方向の揃えを調整 */
-    transition: .5s ease; /* スムーズな変化 */
+    color: #fff; /* アイコンの色を白にする */
+    font-size: 1.2em; /* 文字の大きさを1.2emにする */
+    line-height: 57px; /* 縦の位置を調整する */
+    transition: .5s ease; /* スムーズに変わるようにする */
 }
 
-/* ボタン要素のスタイリング */
+/* ボタンのスタイル */
 button {
-    width: 100%; /* 幅を全体に設定 */
-    height: 40px; /* 高さを固定 */
-    background: #fff; /* 背景色 */
-    border: none; /* ボーダーなし */
-    outline: none; /* アウトラインなし */
+    width: 100%; /* 幅を全体にする */
+    height: 40px; /* 高さを40pxにする */
+    background: #fff; /* 背景を白にする */
+    border: none; /* 枠線をなくす */
+    outline: none; /* 枠線をなくす */
     border-radius: 40px; /* 角を丸くする */
-    cursor: pointer; /* ホバー時にポインターカーソルを表示 */
-    font-size: 1em; /* フォントサイズ */
-    color: #191919; /* 文字色 */
-    font-weight: 500; /* フォントの太さ */
-    transition: .5s ease; /* スムーズな変化 */
+    cursor: pointer; /* マウスカーソルをポインターにする */
+    font-size: 1em; /* 文字の大きさを1emにする */
+    color: #191919; /* 文字の色を黒にする */
+    font-weight: 500; /* 文字を少し太くする */
+    transition: .5s ease; /* スムーズに変わるようにする */
 }
 
-/* ページ変更リンクセクションのスタイリング */
+/* ページを変えるリンクのスタイル */
 .link-change-page {
-    color: #fff; /* 文字色 */
-    font-size: .9em; /* フォントサイズ */
-    text-align: center; /* テキストを中央揃え */
-    margin: 25px 0 10px; /* 上下のマージン */
-    transition: .5s ease; /* スムーズな変化 */
+    color: #fff; /* 文字の色を白にする */
+    font-size: .9em; /* 文字の大きさを小さくする */
+    text-align: center; /* 文字を真ん中にそろえる */
+    margin: 25px 0 10px; /* 上に25px、下に10pxの余白をつける */
+    transition: .5s ease; /* スムーズに変わるようにする */
 }
 
-/* ページ変更リンクセクション内のリンクのスタイリング */
+/* ページを変えるリンクの中のリンクのスタイル */
 .link-change-page p a {
-    color: purple; /* リンクの色 */
-    text-decoration: none; /* 下線を削除 */
-    font-weight: 600; /* フォントの太さ */
-    transition: color .5s ease; /* 色のスムーズな変化 */
+    color: purple; /* リンクの色を紫にする */
+    text-decoration: none; /* 下線をなくす */
+    font-weight: 600; /* 文字を少し太くする */
+    transition: color .5s ease; /* 色がスムーズに変わるようにする */
 }
 
-/* リンクのホバー時のスタイリング */
+/* リンクにマウスを重ねたときのスタイル */
 .link-change-page p a:hover {
-    text-decoration: underline; /* ホバー時に下線を追加 */
+    text-decoration: underline; /* 下線をつける */
 }
 
 /* フェードアウトアニメーションのキーフレーム */
 @keyframes fadeOut {
     0% {
-        opacity: 1; /* 開始時の不透明度 */
+        opacity: 1; /* 最初は見える */
     }
     100% {
-        opacity: 0; /* 終了時の不透明度 */
+        opacity: 0; /* 最後は見えなくなる */
     }
 }
 
-/* フェードアウトクラスのスタイリング */
+/* フェードアウトのスタイル */
 .fade-out {
-    animation: fadeOut 2s forwards; /* 2秒間のフェードアウトアニメーションを適用 */
+    animation: fadeOut 2s forwards; /* 2秒かけて見えなくなる */
 }

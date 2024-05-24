@@ -7,11 +7,13 @@ import jakarta.persistence.Id; // JPA の @Id アノテーションをインポ�
 import jakarta.persistence.JoinColumn; // 外部キー列を定義するための @JoinColumn アノテーションをインポートします。
 import jakarta.persistence.ManyToOne; // 多対一の関連を定義するための @ManyToOne アノテーションをインポートします。
 
-@Entity // このクラスが JPA エンティティであることを示します。
+@Entity //このクラスがデータベースのテーブルに対応するよ
 public class Blog {
 
-    @Id // このフィールドがエンティティの主キーであることを示します。
-    @GeneratedValue(strategy = GenerationType.AUTO) // 主キーの値を自動生成する戦略を指定します。
+    @Id //これはデータベースの中で主キーだよ
+    @GeneratedValue(strategy = GenerationType.AUTO)
+//  「新しいデータができたとき、この番号を自動で作ってね」という意味です。
+// 　新しいデータを追加するとき、IDが1、2、3と順番に増えていくようにします。
     private Integer postId; // ブログのポストID（主キー）
 
     @ManyToOne // このエンティティが多対一の関連を持つことを示します。

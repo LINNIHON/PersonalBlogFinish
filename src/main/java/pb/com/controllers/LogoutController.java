@@ -1,23 +1,47 @@
-package pb.com.controllers; // このクラスが属するパッケージを宣言します。
+package pb.com.controllers; // このクラスが入っているフォルダーの名前です。
 
-import org.springframework.stereotype.Controller; // @Controller アノテーションをインポートします。
-import org.springframework.web.bind.annotation.GetMapping; // @GetMapping アノテーションをインポートします。
+import org.springframework.stereotype.Controller; 
+import org.springframework.web.bind.annotation.GetMapping; 
 
-import jakarta.servlet.http.HttpServletRequest; // HttpServletRequest クラスをインポートします。
-import jakarta.servlet.http.HttpSession; // HttpSession クラスをインポートします。
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession; 
 
-@Controller // このクラスが Spring MVC のコントローラであることを示します。
+@Controller // これは司令塔ですよ。
 public class LogoutController {
 
     // ログアウト処理を行うメソッド
-    @GetMapping("/admin/logout") // GETリクエストが "/admin/logout" にマッピングされるように設定します。
+    @GetMapping("/admin/logout") // "/admin/logout"にアクセスしたらこのメソッドが呼ばれます。
     public String logout(HttpServletRequest request) {
-        HttpSession session = request.getSession(false); // セッションが存在する場合に現在のセッションを取得します。存在しない場合は null を返します。
+        HttpSession session = request.getSession(false); // セッションがあるかどうかチェックします。あれば取り出します。
+//          false を指定すると:
+//        	もしセッションがなければ、新しいセッションを作りません。
+//        	その代わりに、null を返します。null は、「何もないよ」という意味です。
+        
+//        	true を指定すると:
+//        	もしセッションがなければ、新しいセッションを作ります。
+//        	簡単に言うと、false は「新しいセッションを作らないでね」、true は「新しいセッションを作ってね」という意味です。
+//          つまり
+//          セッションが存在する場合:
+//        	既存のセッションオブジェクトが session 変数に代入
+//        	セッションが存在しない場合:
+//        	新しいセッションは作成されず、null が session 変数に代入
+        
         if (session != null) {
-            // セッションを無効化する
-            session.invalidate(); // セッションを無効化します。これにより、セッションに関連付けられたすべての情報が破棄されます。
+            // セッションを無効にする
+            session.invalidate(); // セッションを無効にして、すべての情報を消します。
         }
-        // ログインページにリダイレクト
-        return "redirect:/admin/login"; // ログアウト後、ログインページにリダイレクトします。
+
+        // ログインページに移動する
+        return "redirect:/admin/login"; // ログアウトした後、ログインページに移動します。
     }
+    
+//    セッションを確認
+//    request.getSession(false) で、今のセッションがあるかどうかをチェックします。
+//    セッションがあれば、session という変数に入れます。
+    
+//    セッションを無効にする
+//    セッションがある場合、session.invalidate() でセッションを無効にして、ログイン情報などを消します。
+
+//    ログインページに移動
+//    最後に、return "redirect:/admin/login" でログインページに移動します。
 }
