@@ -67,6 +67,7 @@
 ## 参考文献
 - [参考動画](https://www.youtube.com/watch?v=uTCmNDnP2VY&t=26s)
 - [Spring Framework Documentation](https://spring.pleiades.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpStatus.html)
+-  [What is REST?](https://www.codecademy.com/article/what-is-rest)
 
 ### 困っていること
 - 不要なテーブルを想定した
