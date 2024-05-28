@@ -60,9 +60,10 @@
 - **バージョン管理**: Git (GitHub)
 
 ## 設計書関係
-- **ユースケース図**: [リンク](https://docs.google.com/spreadsheets/d/1ff34zrS7zA0ML4ssA0zZEDyBhvVmqPAi/edit#gid=827394712)
-- **テーブル定義書**: [リンク](https://docs.google.com/spreadsheets/d/1ff34zrS7zA0ML4ssA0zZEDyBhvVmqPAi/edit#gid=827394712)
-- 
+- **ユースケース図**: [リンク](https://docs.google.com/spreadsheets/d/1ff34zrS7zA0ML4ssA0zZEDyBhvVmqPAi/edit#gid=239752063)
+- **テーブル定義書**: [リンク](https://docs.google.com/spreadsheets/d/1ff34zrS7zA0ML4ssA0zZEDyBhvVmqPAi/edit#gid=1841650409)
+- **ER図**: [リンク](https://docs.google.com/spreadsheets/d/1ff34zrS7zA0ML4ssA0zZEDyBhvVmqPAi/edit#gid=480164879)
+
 ## 参考文献
 - [参考動画](https://www.youtube.com/watch?v=uTCmNDnP2VY&t=26s)
 - [Spring Framework Documentation](https://spring.pleiades.io/spring-framework/docs/current/javadoc-api/org/springframework/http/HttpStatus.html)
